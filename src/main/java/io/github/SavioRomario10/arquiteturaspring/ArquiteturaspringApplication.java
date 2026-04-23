@@ -4,7 +4,7 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
-@SpringBootApplication
+@SpringBootApplication//define que esta classe é a base do Spring
 public class ArquiteturaspringApplication {
 
 	public static void main(String[] args) {

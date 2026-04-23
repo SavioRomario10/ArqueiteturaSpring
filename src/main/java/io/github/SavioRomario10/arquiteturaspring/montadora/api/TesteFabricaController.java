@@ -10,16 +10,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import io.github.SavioRomario10.arquiteturaspring.montadora.*;
 
 @RestController // configura como controlador
-@RequestMapping("/carros") //define a url
+@RequestMapping("/carros") //complementa a url
 public class TesteFabricaController {
 
   @Autowired //injeta a dependencia
   @Qualifier("Eletrico") //define qual dependencia injetar
   private Motor motor;
 
-  @PostMapping  //define o mapeamento
-  public CarroStatus ligarCarro(@RequestBody Chave chave){//define que o corpo da requisição sera convertido
-    var carro = new HondaHVR(motor);
+  @Autowired
+  @Aspirado //anotação criada 
+  private Motor motor2;
+
+  @PostMapping  //mapeamento de envio
+  public CarroStatus ligarCarro(@RequestBody Chave chave){
+  //corpo da requisição sera convertido
+    var carro = new HondaHVR(motor2);
 
     return carro.darIgnicao(chave);
   }

@@ -2,14 +2,16 @@ package io.github.SavioRomario10.arquiteturaspring.montadora.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import io.github.SavioRomario10.arquiteturaspring.montadora.Motor;
 import io.github.SavioRomario10.arquiteturaspring.montadora.enums.TipoMotor;
 
-@Configuration//define uma classe de configuração
+@Configuration//classe de configuração
 public class MontadoraConfiguration {
 
-  @Bean(name = "Aspirado")//define que um bean ser injetado
+  @Bean(name = "Aspirado")//bean ser injetado
+  @Primary //prioridade de injeção
   public Motor motorAspirado() {
 
     var motor = new Motor();

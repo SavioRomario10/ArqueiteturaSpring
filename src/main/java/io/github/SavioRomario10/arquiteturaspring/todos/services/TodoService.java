@@ -21,4 +21,12 @@ public class TodoService {
   public void atualizarStatus(TodoEntity todo) {
     repository.save(todo);
   }
+
+  public TodoEntity buscarPorId(Integer id){
+    return repository.findById(id).orElse(null);
+  }
+
+  public void excluir(Integer id){
+    repository.deleteById(id);
+  }
 }

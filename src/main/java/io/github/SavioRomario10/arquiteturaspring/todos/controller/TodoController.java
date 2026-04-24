@@ -2,6 +2,7 @@ package io.github.SavioRomario10.arquiteturaspring.todos.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,9 @@ public class TodoController {
   @PostMapping//mapeamento
   public TodoEntity salvar(@RequestBody TodoEntity todo){
     return this.service.salvar(todo);
+  }
+
+  public void atualizarStatus(@PathVariable("id") Integer id, @RequestBody TodoEntity todo) {
+    
   }
 }

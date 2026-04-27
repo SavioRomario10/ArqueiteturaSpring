@@ -14,6 +14,7 @@ public class ArquiteturaspringApplication {
 
 		builder.bannerMode(Banner.Mode.OFF);
 		builder.profiles("producao");
+		builder.lazyInitialization(false);
 
 		builder.run(args);
 
